@@ -1,11 +1,12 @@
 import { useState } from "react";
 import ChatInput from "../components/Chat/ChatInput/ChatInput";
 import ChatMessages from "../components/Chat/ChatMessages/ChatMessages";
+import { Message } from "../types";
 
 const Chat: React.FC = () => {
-  const [messages, setMessages] = useState<string[]>([]);
+  const [messages, setMessages] = useState<Message[]>([]);
 
-  const handleSubmitMessage = (message: string) => {
+  const handleSubmitMessage = (message: Message) => {
     setMessages((prevMessages) => [...prevMessages, message]);
   };
 
