@@ -1,6 +1,7 @@
 // ChatInput.tsx
 import React, { useState } from "react";
 import { Message } from "../../../types";
+import { getAnswer } from "../../../utils/chatbot";
 
 interface ChatInputProps {
   onSubmitMessage: (message: Message) => void;
@@ -10,14 +11,18 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSubmitMessage }) => {
   const [message, setMessage] = useState<Message>({ text: "", sender: "user" });
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setMessage({ text: event.target.value, sender: "bot" });
+    setMessage({ text: event.target.value, sender: "user" });
   };
 
-  const handleSubmit = (event: React.FormEvent) => {
+  const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     onSubmitMessage(message);
-
     setMessage({ text: "", sender: "user" });
+    const answer = await getAnswer(
+      message.text,
+      "AnishSharma_1002163657_Tutorial6"
+    );
+    onSubmitMessage({ text: answer?.response, sender: "bot" });
   };
 
   return (

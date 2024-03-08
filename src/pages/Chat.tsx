@@ -13,7 +13,7 @@ const Chat: React.FC = () => {
   return (
     <div className="container mx-auto my-8 w-full">
       <div className="flex flex-col justify-between  items-center bg-white rounded-lg p-4 ">
-        <div className=" overflow-scroll h-[500px] w-full">
+        <div className="  h-[600px] w-full">
           <ChatMessages messages={messages} />
         </div>
         <div className=" ">
