@@ -1,12 +1,15 @@
 import React from "react";
 import Sidebar from "../Sidebar/Sidebar";
-import { LayoutChild } from "../../types";
 
-const Layout: React.FC<LayoutChild> = ({ children }) => {
+import { Outlet } from "react-router-dom";
+
+const Layout: React.FC = () => {
   return (
     <div className="flex h-screen bg-gray-100">
       <Sidebar />
-      <div className="flex-grow w-full">{children}</div>
+      <div className="flex-grow w-full">
+        <Outlet />
+      </div>
     </div>
   );
 };

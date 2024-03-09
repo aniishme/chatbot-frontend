@@ -32,7 +32,7 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSubmitMessage }) => {
         value={message.text}
         onChange={handleChange}
         placeholder="Type your message..."
-        className="border border-gray-300 rounded-lg px-4 py-2 mr-2"
+        className="border border-gray-300 rounded-lg px-4 py-2 mr-2 w-96"
       />
       <button
         type="submit"
