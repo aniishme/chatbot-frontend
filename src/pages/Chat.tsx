@@ -16,7 +16,7 @@ const Chat: React.FC = () => {
         <div className="  h-[600px] w-full">
           <ChatMessages messages={messages} />
         </div>
-        <div className=" ">
+        <div>
           <ChatInput onSubmitMessage={handleSubmitMessage} />
         </div>
       </div>
