@@ -7,7 +7,7 @@ const Sidebar: React.FC = () => {
     <div className="bg-gray-800 w-64 flex-none">
       <div className="p-4 text-white">
         <h1 className="text-l text-center font-semibold">
-          Disaster Decision Support Chatbot
+          Disaster Decision Support System
         </h1>
         <ul className="mt-4 ">
           <Link to="/dashboard">

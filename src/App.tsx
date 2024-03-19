@@ -3,11 +3,18 @@ import "./App.css";
 import Layout from "./components/Layout/Layout";
 import Chat from "./pages/Chat";
 import Dashboard from "./pages/Dashboard";
+import UserQuery from "./pages/UserQuery";
+import Login from "./pages/Login";
+import ProtectedRoute from "./components/Protected/Protected";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Layout />,
+    element: (
+      <ProtectedRoute>
+        <Layout />
+      </ProtectedRoute>
+    ),
     children: [
       {
         path: "chatbot",
@@ -17,7 +24,15 @@ const router = createBrowserRouter([
         path: "dashboard",
         element: <Dashboard />,
       },
+      {
+        path: "user-query",
+        element: <UserQuery />,
+      },
     ],
+  },
+  {
+    path: "/login",
+    element: <Login />,
   },
 ]);
 
