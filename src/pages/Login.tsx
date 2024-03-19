@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { api } from "../utils/api";
 
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -22,7 +22,7 @@ const Login = () => {
       // Store the access token in localStorage or cookies
       localStorage.setItem("accessToken", accessToken);
       // Redirect to the dashboard or home page
-      return navigate("/dashboard");
+      return navigate("/portal/dashboard");
     } catch (err: any) {
       setError(err.response.data.detail);
     }
@@ -31,10 +31,13 @@ const Login = () => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <div className="p-6 bg-white rounded-md shadow-md">
-        <h2 className="text-lg font-semibold text-center text-gray-700">
-          Login
+        <Link to="/" className="text-blue-400">
+          {"< Home"}
+        </Link>
+        <h2 className="text-2xl font-semibold text-center text-gray-700 mb-12">
+          LOGIN
         </h2>
-        <form onSubmit={handleLogin}>
+        <form onSubmit={handleLogin} className="w-80">
           <div className="mt-4">
             <label className="block" htmlFor="email">
               Email

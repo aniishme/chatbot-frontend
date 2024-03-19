@@ -5,11 +5,13 @@ import Chat from "./pages/Chat";
 import Dashboard from "./pages/Dashboard";
 import UserQuery from "./pages/UserQuery";
 import Login from "./pages/Login";
+import SubmitQuery from "./pages/SubmitQuery";
 import ProtectedRoute from "./components/Protected/Protected";
+import Home from "./pages/Home";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/portal",
     element: (
       <ProtectedRoute>
         <Layout />
@@ -29,6 +31,14 @@ const router = createBrowserRouter([
         element: <UserQuery />,
       },
     ],
+  },
+  {
+    path: "/",
+    element: <Home />,
+  },
+  {
+    path: "/submit-query",
+    element: <SubmitQuery />,
   },
   {
     path: "/login",
