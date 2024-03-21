@@ -26,11 +26,7 @@ const Sidebar: React.FC = () => {
           <Link to="/portal/chatbot">
             <li className="p-2 hover:bg-gray-700 cursor-pointer">ChatBot</li>
           </Link>
-          <Link to="/portal/user-query">
-            <li className="p-2 hover:bg-gray-700 cursor-pointer">
-              User Queries
-            </li>
-          </Link>
+
           <button onClick={handleLogout} className="w-full text-left mt-8">
             <li className="p-2 hover:bg-gray-700 cursor-pointer text-red-400">
               Logout

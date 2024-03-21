@@ -3,7 +3,6 @@ import "./App.css";
 import Layout from "./components/Layout/Layout";
 import Chat from "./pages/Chat";
 import Dashboard from "./pages/Dashboard";
-import UserQuery from "./pages/UserQuery";
 import Login from "./pages/Login";
 import SubmitQuery from "./pages/SubmitQuery";
 import ProtectedRoute from "./components/Protected/Protected";
@@ -25,10 +24,6 @@ const router = createBrowserRouter([
       {
         path: "dashboard",
         element: <Dashboard />,
-      },
-      {
-        path: "user-query",
-        element: <UserQuery />,
       },
     ],
   },
