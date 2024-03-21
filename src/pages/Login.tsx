@@ -1,13 +1,19 @@
 import React, { useState } from "react";
 import { api } from "../utils/api";
 
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const isAuthenticated = localStorage.getItem("accessToken");
+
+  if (isAuthenticated) {
+    return <Navigate to="/portal/dashboard" />;
+  }
 
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -19,8 +25,10 @@ const Login = () => {
       });
       console.log(response);
       const accessToken = response.data.access_token;
+      const userRole = response.data.role;
       // Store the access token in localStorage or cookies
       localStorage.setItem("accessToken", accessToken);
+      localStorage.setItem("role", userRole);
       // Redirect to the dashboard or home page
       return navigate("/portal/dashboard");
     } catch (err: any) {
