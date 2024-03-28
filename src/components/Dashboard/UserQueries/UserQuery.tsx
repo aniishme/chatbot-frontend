@@ -10,6 +10,8 @@ const UserQuery: React.FC = () => {
       try {
         const response = await api.get("/query");
         setData(response.data);
+        const responseString = JSON.stringify(response);
+        localStorage.setItem("queries", responseString);
       } catch (error) {
         console.error("Error fetching data:", error);
       }

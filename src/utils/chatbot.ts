@@ -1,10 +1,9 @@
 import { api } from "./api";
 
-const getAnswer = async (question: string, dataset: string) => {
+const getAnswer = async (question: string) => {
   // Call the API to get the answer
-  const response = await api.post("http://localhost:8000/answer/", {
+  const response = await api.post("http://localhost:8000/chat/", {
     query: question,
-    store_name: dataset,
   });
   return response.data;
 };

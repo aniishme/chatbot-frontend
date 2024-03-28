@@ -9,7 +9,7 @@ interface ChatMessagesProps {
 const ChatMessages: React.FC<ChatMessagesProps> = ({ messages }) => {
   return (
     <div className="w-full flex items-center justify-center overflow-scroll overflow-x-hidden border-b-2 border-blue-500 p-2 ">
-      <div className="flex flex-col space-y-5 w-1/2  h-[550px] ">
+      <div className="flex flex-col space-y-5 w-1/2  h-[570px] p-4">
         {messages.map((message, index) => (
           <div
             key={index}
